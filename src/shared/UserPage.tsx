@@ -1,15 +1,17 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext  } from 'react';
 import {
-	BrowserRouter as Router,
 	Switch,
 	Route,
 	Link,
 	Redirect,
-	useParams,
 	useHistory,
 	useRouteMatch
 } from 'react-router-dom';
-import NavBar from './NavBar';
+
+import {NavBar} from '../styled/Components';
+import Home from './Home';
+import Schedule from './Schedule';
+import Courses from './Courses';
 import { AuthContext } from '../App';
 
 const UserPage = () => {
@@ -21,7 +23,7 @@ const UserPage = () => {
 	}
 	const { url, path } = useRouteMatch();
 	return (
-		<div className="flex flex-row w-full h-full">
+		<div className="flex flex-row w-full h-full bg-gray-900 text-gray-200">
 			<NavBar>
 				<Link to={`${url}/home`}
 					className="mt-auto flex flex-row justify-center group-hover:justify-start group-hover:mr-3
@@ -45,23 +47,18 @@ const UserPage = () => {
 					<p className="hidden group-hover:block mx-2 whitespace-nowrap">Log out</p>
 				</Link>
 			</NavBar>
+
 			<Switch>
 				<Route path={`${path}/home`}>
-					<div className="overflow-auto flex-1">
-						home
-						</div>
+					<Home />
 				</Route>
 
 				<Route path={`${path}/schedule`}>
-					<div className="overflow-auto flex-1">
-						schedule
-						</div>
+					<Schedule />
 				</Route>
 
 				<Route path={`${path}/courses`}>
-					<div className="overflow-auto flex-1">
-						courses
-						</div>
+					<Courses />
 				</Route>
 
 				<Route path={`${path}/`}>

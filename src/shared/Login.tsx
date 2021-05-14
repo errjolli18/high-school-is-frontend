@@ -3,7 +3,7 @@ import {
 	useHistory,
 } from 'react-router-dom';
 import { AuthContext } from '../App';
-import { Input, ActionButton, Form, Label } from '../styled/ActionButton';
+import { Input, ActionButton, Form, Label } from '../styled/Components';
 
 const Login = () => {
 	const history = useHistory();
@@ -30,7 +30,7 @@ const Login = () => {
 		setForm({ ...form, [name]: value });
 	}
 	return (
-		<div className="bg-purple-900 m-auto w-9/12 rounded-lg px-10 pt-10 text-center min-w-max max-w-4xl shadow-lg text-gray-300">
+		<div className="bg-gray-900 m-auto w-9/12 rounded-lg px-10 pt-10 text-center min-w-max max-w-4xl shadow-lg text-gray-300">
 			<p className="text-2xl"><b>High School Management System</b></p>
 			<Form>
 				<Label>

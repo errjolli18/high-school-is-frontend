@@ -49,7 +49,7 @@ function App() {
 	});
 	return (
 		<AuthContext.Provider value={authState}>
-			<div className="App h-screen w-screen flex justify-center items-center bg-purple-800">
+			<div className="App h-screen w-screen flex justify-center items-center bg-gray-700 shadow-xl">
 				<Router>
 					<Switch>
 						<Route path="/u/:userId">
