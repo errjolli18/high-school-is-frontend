@@ -1,4 +1,4 @@
-import React, { useContext  } from 'react';
+import React, { useContext, useEffect } from 'react';
 import {
 	Switch,
 	Route,
@@ -8,7 +8,7 @@ import {
 	useRouteMatch
 } from 'react-router-dom';
 
-import {NavBar} from '../styled/Components';
+import { NavBar } from '../styled/Components';
 import Home from './Home';
 import Schedule from './Schedule';
 import Courses from './Courses';
@@ -17,10 +17,12 @@ import { AuthContext } from '../App';
 const UserPage = () => {
 	const history = useHistory();
 	const authContext = useContext(AuthContext);
-	if (!authContext.authenticated) {
-		authContext.signOut();
-		history.push("/");
-	}
+	useEffect(() => {
+		if (!authContext.authenticated) {
+			authContext.signOut();
+			history.push("/");
+		}
+	});
 	const { url, path } = useRouteMatch();
 	return (
 		<div className="flex flex-row w-full h-full bg-gray-900 text-gray-200">

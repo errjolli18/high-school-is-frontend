@@ -31,6 +31,7 @@ function App() {
 			userId: userId,
 			jwtToken: jwtToken
 		});
+		console.log();
 	}
 	const signOut = () => {
 		setAuthState({
