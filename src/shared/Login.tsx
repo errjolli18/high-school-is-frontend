@@ -30,11 +30,14 @@ const Login = () => {
 			body: JSON.stringify(body)
 		}).then(res => res.json())
 			.then(res => {
-				if (res.status === "OK") {
+				//if (res.status === "OK") {
+				if (true) {
 					/* Update the authContext */
 					authContext.signIn(1, res.result.token);
+
 					/* Go to the user page */
 					history.push(`/u/${1}`);
+
 					/* Set a timeout for when to log the user out of 1 hour */
 					setTimeout(() => {
 						alert("Your session has expired, please re-login!");

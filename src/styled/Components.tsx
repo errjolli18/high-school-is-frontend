@@ -46,6 +46,7 @@ const ContentPage = (props: any) => {
 	return (
 		<div className="overflow-auto flex-1 flex flex-col">
 			<header><p className="text-3xl ml-10 my-3">{props.title}</p></header>
+			{/* The children and other props go here */}
 			<section {...props} className="flex-1 bg-gray-200 rounded-tl-large text-gray-900"></section>
 		</div>
 	);

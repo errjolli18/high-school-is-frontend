@@ -13,7 +13,8 @@ module.exports = {
 			width: ["responsive", "hover", "focus"],
 			display: ["group-hover"],
 			justifyContent: ["group-hover"],
-			margin: ["group-hover"]
+			margin: ["group-hover"],
+			borderWidth: ["last"]
 		},
   },
   plugins: [],

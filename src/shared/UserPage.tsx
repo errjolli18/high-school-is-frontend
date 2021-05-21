@@ -14,6 +14,7 @@ import Schedule from './Schedule';
 import Courses from './Courses';
 import { AuthContext } from '../App';
 
+/** The user page after log in */
 const UserPage = () => {
 	const history = useHistory();
 	const authContext = useContext(AuthContext);

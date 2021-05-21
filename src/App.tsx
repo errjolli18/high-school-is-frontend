@@ -15,6 +15,10 @@ type AuthContextType = {
 	signOut: () => void;
 };
 
+/** The authentication context that is referred to to determine if the user is
+* logged in. 
+* @returns {AuthContextType} The context object
+* */
 export const AuthContext = React.createContext<AuthContextType>({
 	authenticated: false,
 	userId: 0,
