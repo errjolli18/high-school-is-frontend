@@ -30,13 +30,13 @@ const Login = () => {
 			body: JSON.stringify(body)
 		}).then(res => res.json())
 			.then(res => {
-				//if (res.status === "OK") {
-				if (true) {
+				console.log(res);
+				if (res.status === "OK") {
 					/* Update the authContext */
-					authContext.signIn(1, res.result.token);
+					authContext.signIn(res.result.userID, res.result.token);
 
 					/* Go to the user page */
-					history.push(`/u/${1}`);
+					history.push(`/u/${res.result.userID}`);
 
 					/* Set a timeout for when to log the user out of 1 hour */
 					setTimeout(() => {

@@ -23,6 +23,13 @@ const scheduleData = [
 		]
 	},
 	{
+		name: "Thursday",
+		hours: [
+			{course: "Calculus", hour: 1},
+			{course: "Physics", hour: 2}
+		]
+	},
+	{
 		name: "Friday",
 		hours: [
 			{course: "Calculus", hour: 1},
