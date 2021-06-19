@@ -24,19 +24,19 @@ const Login = () => {
 		}
 		await fetch(`${apiLink}/auth/signin`, {
 			method: 'post',
+			credentials: 'include',
 			headers: {
 				"Content-Type": "application/json"
 			},
 			body: JSON.stringify(body)
 		}).then(res => res.json())
 			.then(res => {
-				console.log(res);
 				if (res.status === "OK") {
 					/* Update the authContext */
 					authContext.signIn(res.result.userID, res.result.token);
 
 					/* Go to the user page */
-					history.push(`/u/${res.result.userID}`);
+					history.push(`/${res.result.role}/${res.result.userID}`);
 
 					/* Set a timeout for when to log the user out of 1 hour */
 					setTimeout(() => {
@@ -76,6 +76,7 @@ const Login = () => {
 						type="password" />
 				</Label>
 				<ActionButton
+					className="asldkf"
 					onClick={onSubmit}>
 					Log in
 				</ActionButton>

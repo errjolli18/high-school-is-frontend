@@ -60,6 +60,22 @@ const NavBar = (props: any) => {
 	);
 }
 
+/** Event Entry */
+const EventEntry = (props: any) => {
+	return (
+		<div className="flex items-center gap-4">
+			<div className={`flex flex-col items-center border-2 border-${props.bordercolor}-400 rounded-tl-2xl rounded-bl-2xl py-1 px-4`}>
+				<p className="font-bold text-5xl"> {props.date} </p>
+				<p className="-mt-2 text-3xl"> {props.month} </p>
+			</div>
+			<div className="flex flex-col gap-4 items-start">
+				<p className="font-bold text-xl"> {props.title} </p>
+				<p className="-mt-2 text-gray-400 text-lg"> {props.desc} </p>
+			</div>
+		</div>
+	);
+}
+
 export {
 	Form,
 	ActionButton,
@@ -67,4 +83,5 @@ export {
 	Label,
 	ContentPage,
 	NavBar,
+	EventEntry,
 };

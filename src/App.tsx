@@ -5,7 +5,8 @@ import {
 	Route,
 } from 'react-router-dom';
 import Login from './shared/Login';
-import UserPage from './shared/UserPage';
+import Teacher from './teacher/Teacher';
+import Student from './student/Student';
 
 type AuthContextType = {
 	authenticated: boolean;
@@ -57,8 +58,11 @@ function App() {
 			<div className="App h-screen w-screen flex justify-center items-center bg-gray-700 shadow-xl">
 				<Router>
 					<Switch>
-						<Route path="/u/:userId">
-							<UserPage />
+						<Route path="/teacher/:userId">
+							<Teacher />
+						</Route>
+						<Route path="/student/:userId">
+							<Student />
 						</Route>
 						<Route path="/">
 							<Login />
